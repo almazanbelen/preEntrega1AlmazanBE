@@ -18,5 +18,45 @@
     "status": "200",
     "stock": "15",
     "category": "accesorios"
+  },
+  {
+    "id": 4,
+    "title": "remera",
+    "description": "blanca",
+    "code": "r45",
+    "price": "3500",
+    "status": "200",
+    "stock": "6",
+    "category": "ropa"
+  },
+  {
+    "id": 5,
+    "title": "buzo",
+    "description": "gris",
+    "code": "f48",
+    "price": "8000",
+    "status": "200",
+    "stock": "15",
+    "category": "ropa"
+  },
+  {
+    "id": 7,
+    "title": "remera",
+    "description": "azul",
+    "code": "f88",
+    "price": "6000",
+    "status": "200",
+    "stock": "5",
+    "category": "ropa"
+  },
+  {
+    "id": 8,
+    "title": "pantalon",
+    "description": "beige",
+    "code": "5g5",
+    "price": "8000",
+    "status": "200",
+    "stock": "6",
+    "category": "ropa"
   }
 ]

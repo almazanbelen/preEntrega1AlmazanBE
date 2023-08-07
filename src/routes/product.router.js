@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const fs = require('fs')
 
+
 class Contenedor {
     constructor(file) {
         this.file = file
@@ -64,8 +65,7 @@ const products = new Contenedor ("productos.json")
 // //Endpoints
 
 router.get("/product", async (req,res) =>{    
-    const allObjects = await products.getAllObjects()
-    console.log("Objetos guardados", allObjects)      
+    const allObjects = await products.getAllObjects()      
     res.json(allObjects)
 })
 
@@ -79,7 +79,7 @@ router.get('/product/:pid', async (req,res)=>{
 //ruta para agregar un producto
 router.post("/product", async (req, res)=>{
     const product = await products.save(req.body)        
-    res.json({message: "Producto agregado"})   
+    res.json({message: "Producto agregado"})
 })
 
 //ruta para actualizar un producto por ID
