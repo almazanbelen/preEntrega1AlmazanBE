@@ -3,6 +3,7 @@ const router = express.Router()
 const fs = require('fs')
 
 
+
 class Contenedor {
     constructor(file) {
         this.file = file
@@ -115,4 +116,7 @@ router.delete('/product/:pid', async(req, res) => {
     res.send("Objeto eliminado")   
 });
 
-module.exports = router
+module.exports = {
+    router : router,
+    products : products,
+}

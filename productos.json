@@ -58,5 +58,15 @@
     "status": "200",
     "stock": "6",
     "category": "ropa"
+  },
+  {
+    "id": 9,
+    "title": "pollera",
+    "description": "negra",
+    "code": "f18",
+    "price": "8000",
+    "status": "true",
+    "stock": "15",
+    "category": "ropa"
   }
 ]
