@@ -2,66 +2,11 @@ const express = require('express')
 const fs = require('fs')
 const router = express.Router()
 const constProd = require("../routes/product.router")
+const Contenedor = require('../contenedor/classContainer')
 
 const allProducts = constProd.products
-console.log(allProducts)
-//class carrito
-class Contenedor {
-    constructor(file) {
-        this.file = file
-    }
 
-    async save(obj){
-        try{
-            const objects = await this.getAllObjects()
-            const lastId = objects.length > 0 ? objects[
-                objects.length -1].id : 0
-            const newId = lastId + 1
-            const newObj = {id: newId, ...obj}
-            objects.push(newObj)
-            await this.saveObjects(objects)            
-        }catch(error){
-            throw new Error("Error al guardar el objeto")
-        }
-    }
-
-    async getById(id){
-        try{
-            const objects = await this.getAllObjects()
-            const obj = objects.find((o)=> o.id === id)
-            return obj || null
-        }catch(error){
-            throw new Error("Error al obtener ID")
-        }
-    }
-    
-    async deleteById(id){
-        try{
-            let objects =await this.getAllObjects()
-            objects = objects.filter((o)=> o.id !== id)
-            await this.saveObjects(objects)
-        }catch(error){
-            throw new Error ("Error al eliminar los objetos")
-        }
-    }
-    async getAllObjects(){
-        try{
-            const data = await fs.promises.readFile(this.file, "utf-8")
-            return data ? JSON.parse(data) : []
-        }catch(error){
-           return []
-        }
-    }
-
-    async saveObjects(objects){
-        try{
-            await fs.promises.writeFile(this.file, JSON.stringify(objects, null, 2))
-        }catch(error){
-            throw new Error("Error al guardar objetos")
-        }
-    }
-}
-
+//
 //instanciar carrito
 const cart = new Contenedor ("cart.json")
 

@@ -16,7 +16,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 //Routing
 
 app.use("/", cartRouter)
-app.use("/", productRouter.router)
+app.use("/", productRouter)
 
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname,"src/public","index.html"))
